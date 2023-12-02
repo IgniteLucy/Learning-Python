@@ -16,3 +16,10 @@ match action:
         print(float(Number1) / float(Number2))       
     case _:
         print("DID you do something wrong homie?.. HUH?")
+
+
+
+# Very scary way to calculate things 
+# calculator = input("Enter calculation pls: ")
+# command = 'print(' + calculator + ')'
+# exec(command)
