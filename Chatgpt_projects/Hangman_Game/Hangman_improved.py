@@ -18,8 +18,20 @@ fruit_list = [
 Lives = 10
 Alive = True
 random_word = random.choice(fruit_list)
+guessed_letters = set()
 
 print("The word is: " + random_word)
+
+
+
+
+
+
+
+
+
+
+
 
 def hangmanPrinter():
     penalty = 10 - Lives

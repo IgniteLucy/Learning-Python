@@ -1,0 +1,4 @@
+//// thanks to NIcholas Renotte /////
+1) need the depoendency and get the Webcam or capturecard 
+import cv2
+from matploitlib import pyplot as plt
