@@ -1,6 +1,6 @@
 =P R O J E C T _ _ _ _ S T U F F=
 {
-    1: create a command line audioplayer
+    1: create a command line audioplayer- ok 
     2: Basic frequency analyzer
     3: volume adjuster ( of a file)
     4: apply audio effects 

@@ -15,21 +15,28 @@ sounds_dir = os.path.join(script_dir,'..', 'Sounds')
 #Define audio path
 sounds_files = [f for f in os.listdir(sounds_dir) if os.path.isfile(os.path.join(sounds_dir,f))]
 
+#alphabetically sorted
+sounds_files.sort()
+
+
+#Group by extension
+grouped_files = {}
+for file in sounds_files:
+    _, extension = os.path.splitext(file)
+    grouped_files.setdefault(extension, []).append(file)
+
+
+
 
 #Display numbered list of files 
 print("Select a file to play")
-for i , file in enumerate(sounds_files, start=1):
-    print(f"{i}) {file}")
+for i, (extension, files) in enumerate(grouped_files.items(), start=1):
+    print(f"{i}) {', '.join(files)} ({extension[1:]})")
 
 #Now we wanna check if the file already exists in wav. form
-
-
-
-
 try:
     choice = int(input("Enter the number of the file you want to play: "))
-    selected_file = sounds_files[choice - 1]
-
+    selected_file = grouped_files[list(grouped_files.keys())[choice - 1]][0]
 
     if selected_file.lower().endswith(".wav"):
         audio_file_path = os.path.join(sounds_dir, selected_file)
