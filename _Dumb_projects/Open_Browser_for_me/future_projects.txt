@@ -1,0 +1,7 @@
+things i wanna try and do
+
+1) Open discord with python - OK
+2) Navigate to the login page - wait to load - join a vc channel with an account
+3) Check discord for updates ( on linux / ubuntu since updating is alil annoying)
+4) Make an option menu for it [1) update discord, 2) Join vc 1 , vc 2 , vc 3 ....]
+5) Check my friends discord channel to download memes/videos/for myself to spare time

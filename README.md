@@ -6,7 +6,14 @@ This is my learning path for python, daily/weekly updates and projects
 
 
 
+[]
+
+
+
 [Logbook]
+
+
+
 
 3-december-2023 17:43
 - Made an guessing game

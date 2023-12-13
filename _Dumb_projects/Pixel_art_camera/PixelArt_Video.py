@@ -20,7 +20,7 @@ index = len(existing_files) + 1
 
 output_video_path = os.path.join(output_dir,f'output_video_{index}.mp4')
 
-
+# 0 should standard camera if not cycle through it
 cap = cv2.VideoCapture(0)
 
 frame_width =  int(cap.get(3))
@@ -31,7 +31,7 @@ frame_rate = 5 # 5 frames taken per second
 capture_interval = int(cap.get(cv2.CAP_PROP_FPS)/ frame_rate)
 
 #Custom directory
-output_video_path = os.path.join(output_dir, 'output_video.mp4')
+#output_video_path = os.path.join(output_dir, 'output_video.mp4')
 
 
 video_writer = cv2.VideoWriter(output_video_path, cv2.VideoWriter_fourcc(*'mp4v'), frame_rate, (frame_width, frame_height))

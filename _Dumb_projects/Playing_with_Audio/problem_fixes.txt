@@ -1,0 +1,22 @@
+=P R O J E C T _ _ _ _ S T U F F=
+{
+    1: create a command line audioplayer
+    2: Basic frequency analyzer
+    3: volume adjuster ( of a file)
+    4: apply audio effects 
+    
+    further ideas
+    5:Audio compression
+    6: voice recognition
+    7:Machine learning for some audio stuff
+    8:Watermark audio
+
+}
+
+
+[INSTALLATION ISSUES WITH simpleaudio]
+1) tried to "pip install simpleaudio" but got a legacy error
+2) Since im running un Ubuntu linux i needed to do the following: 'sudo apt-get install libasound2-dev'
+these file are related to the ALSA Advanced linux Sound Architecture library which simpleaudio uses.
+3) Retried pip install simpleaudio and it worked for me. (( if this doesnt work for you try to install pygame))
+

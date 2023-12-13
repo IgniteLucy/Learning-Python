@@ -1,4 +1,18 @@
-//// thanks to NIcholas Renotte /////
-1) need the depoendency and get the Webcam or capturecard 
-import cv2
-from matploitlib import pyplot as plt
+//// thanks to NIcholas Renotte ///// some googling and shiz
+import os dependency for path finding
+import cv2 dependency for camera access
+
+
+1) just for the ease out of it we want to get the directory of the place where we are working
+2) we then create a new directory called "output_videos" and then check if it already is created or not
+3)  Get the files from the directory and check if it ends with mp4
+4) create an indexing number for the files that we see in the mp4 folder
+5) check how many files there are in the listdir and add one 
+6) when outputing we need to have the writing path where we want to save the video, thus
+it shall be t the output_dir, "output_video_{index}.mp4"
+7) get the cv2 camera video capture
+8) give values for the frame height and frame_width
+9) give framerate ( frame_rate = 5)
+10) calculate capture capture_interval
+11)output path the video
+12)release and destroyAllWindows
