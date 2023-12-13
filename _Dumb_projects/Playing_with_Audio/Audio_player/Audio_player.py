@@ -8,9 +8,25 @@ import time
 # script dir path
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
+#Sounds directory
+sounds_dir = os.path.join(script_dir,'..', 'Sounds')
+
 #Define audio path
-audio_file_path_mp3 = os.path.join(script_dir, '..', 'Sounds', 'You_so_port.mp3')
-audio_file_path_wav = os.path.join(script_dir, '..', 'Sounds', 'You_so_port.wav')
+sounds_files = [f for f in os.listdir(sounds_dir) if os.path.isfile(os.path.join(sounds_dir,f))]
+
+
+#Display numbered list of files 
+print("Select a file to play")
+for i , file in enumerate(sounds_files, start=1):
+    print(f"{i}) {file}")
+
+try:
+    choice = int(input("Enter the number of the file you want to play: "))
+    selected_file = sounds_files[choice - 1]
+    audio_file_path = os.path.join(sounds_dir, selected_file)
+except (ValueError, IndexError):
+    print("Invalid choice. Exiting.")
+    exit()
 
 
 
@@ -21,22 +37,17 @@ try:
     time.sleep(1)
     print("Playing audio in 1....")
     time.sleep(1)
-    wav_obj = sa.WaveObject.from_wave_file(audio_file_path_mp3)
-except Exception:
-    print("Hmm, seems we have to switch")
+    print(f"Playing audio file: {selected_file}")
+    wav_obj = sa.WaveObject.from_wave_file(audio_file_path)
+except Exception as e:
+    print("Hmm, seems we have extension issue, switch it!")
     time.sleep(1)
     print("Seems that the program did not like using the mp3 file")
     time.sleep(0.5)
-    print("Lets use a wav file now")
+    print("please consider first converting the file into a wav file, thankyou")
     time.sleep(0.5)
-    print("Playing audio in 3....")
-    time.sleep(1)
-    print("Playing audio in 2....")
-    time.sleep(1)
-    print("Playing audio in 1....")
-    time.sleep(1)
-    wav_obj = sa.WaveObject.from_wave_file(audio_file_path_wav)
-
+    print(f"Error loading audio file: {e}")
+    exit()
 
 
 
