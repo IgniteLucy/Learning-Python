@@ -20,3 +20,5 @@
 these file are related to the ALSA Advanced linux Sound Architecture library which simpleaudio uses.
 3) Retried pip install simpleaudio and it worked for me. (( if this doesnt work for you try to install pygame))
 
+[CONVERTING ISSUES MP3 TO WAV- PYDUB - Ubuntu]
+1) we need to install and get FFmpeg - we do 'sudo apt-get update sudo apt-get install ffmmpeg' if not done already

@@ -2,6 +2,7 @@ import simpleaudio.functionchecks as fc
 import simpleaudio as sa
 import os 
 import time
+from pydub import AudioSegment
  # fc.LeftRightCheck.run() first check if audio works
  # https://pypi.org/project/simpleaudio/ -- documentation starter -- 
 
@@ -20,14 +21,34 @@ print("Select a file to play")
 for i , file in enumerate(sounds_files, start=1):
     print(f"{i}) {file}")
 
+#Now we wanna check if the file already exists in wav. form
+
+
+
+
 try:
     choice = int(input("Enter the number of the file you want to play: "))
     selected_file = sounds_files[choice - 1]
-    audio_file_path = os.path.join(sounds_dir, selected_file)
+
+
+    if selected_file.lower().endswith(".wav"):
+        audio_file_path = os.path.join(sounds_dir, selected_file)
+    else:
+        #check if there is a wav file available
+        wav_variant = os.path.splitext(selected_file)[0] + '.wav'
+        wav_path = os.path.join(sounds_dir,wav_variant)
+        if os.path.isfile(wav_path):
+            audio_file_path = wav_path
+        else:
+            #convert mp3 to wav
+            mp3_path = os.path.join(sounds_dir,selected_file)
+            wav_path = os.path.join(sounds_dir,os.path.splitext(selected_file)[0] + '.wav')
+            sound =  AudioSegment.from_mp3(mp3_path)
+            sound.export(wav_path, format="wav")
+            audio_file_path = wav_path
 except (ValueError, IndexError):
     print("Invalid choice. Exiting.")
     exit()
-
 
 
 try:
